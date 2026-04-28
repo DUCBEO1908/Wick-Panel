@@ -2,14 +2,12 @@
 
 import { useState } from "react";
 
-const API = "https://wick-panel-2.onrender.com"; // 🔥 THAY ĐÚNG LINK
-
 export default function Home() {
   const [status, setStatus] = useState("Idle");
 
   async function sendCommand(action: string) {
     try {
-      const res = await fetch(`${API}/command`, {
+      const res = await fetch("/api/command", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
